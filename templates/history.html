@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <table class="table table-hover">
+            <tr>
+                <th>Symbol</th>
+                <th>Items</th> 
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+            {% for hist in history %}
+                <tr>
+                    <td>{{ hist['stock'] }}</td>
+                    <td>{{ hist['numstocks'] }}</td> 
+                    <td>{{ hist['prev_price'] }}</td>
+                    <td>{{ hist['time'] }}</td>
+                </tr>
+            {% endfor %}
+        </tabel>
+    </div>
+{% endblock %}

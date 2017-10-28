@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <table class="table table-hover">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th> 
+                <th>Items</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for stock in stocks.values() %}
+                <tr>
+                    <td>{{ stock['stock'] }}</td>
+                    <td>{{ stock['name'] }}</td> 
+                    <td>{{ stock['numstocks'] }}</td>
+                    <td>{{ stock['cur_price'] }}</td>
+                    <td>{{ stock['total_price'] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>{{ remaining_cash }}</td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td><strong>{{ total_cash }}</strong></td>
+            </tr>
+        </tabel>
+    </div>
+{% endblock %}

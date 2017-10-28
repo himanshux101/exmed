@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form class="form-horizontal" text-align="center" action="{{ url_for('account') }}" method="post">
+        <fieldset>
+            <div class="form-group">
+                Password : <input autocomplete="off" autofocus class="form-control" name="password1" placeholder="type password" type="text"/>
+            </div>
+            <div class="form-group">
+                Conform Password : <input class="form-control" name="password2" placeholder="conform password" type="number"/>
+            </div>
+            <div class="form-group">
+                Buy cash : <input class="form-control" name="cash" placeholder="0 for no cash" type="number"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}
