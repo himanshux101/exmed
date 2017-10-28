@@ -91,7 +91,7 @@ def buy():
         
         
         if not stock:
-            return apology("Enter a valid stock")
+            return apology("Enter a valid MEDICINE")
             
         result = db.execute("SELECT * FROM users WHERE id = :id", id=session["user_id"])
         cash_left = result[0]["cash"]
